@@ -1,17 +1,15 @@
 # Openshift PHP Plugin Cartridge
 Welcome to the world of [PHP-FPM](http://php.net/manual/en/book.fpm.php) within [openshift](https://www.openshift.com/).
 
-Currently this cartridge works well the [boekkooi NGINX cartridge](https://github.com/boekkooi/openshift-cartridge-nginx).
-
 You can add this cartridge to your application using:
 ```BASH
-rhc cartridge add -a myapp http://cartreflect-claytondev.rhcloud.com/github/boekkooi/openshift-cartridge-php
+rhc cartridge add -a myapp http://cartreflect-claytondev.rhcloud.com/github/frantisekz/openshift-cartridge-php
 ```
 
 If you want to install a specific PHP version you can add `--env OPENSHIFT_PHP_VERSION=<version>` to the command.
 For example to install PHP 5.5.22 you can use:
 ```BASH
-rhc cartridge add -a myapp --env OPENSHIFT_PHP_VERSION=5.5.22 http://cartreflect-claytondev.rhcloud.com/github/boekkooi/openshift-cartridge-php
+rhc cartridge add -a myapp --env OPENSHIFT_PHP_VERSION=5.5.22 http://cartreflect-claytondev.rhcloud.com/github/frantisekz/openshift-cartridge-php
 ```
 
 ## Versions
@@ -54,11 +52,11 @@ In your application create the following directories:
 .openshift/fpm/
 ```
 
-In the `cli` directory create the `php.ini.erb` file and copy the content from [`conf/php.ini.erb`](https://github.com/boekkooi/openshift-cartridge-php/blob/master/conf/php.ini.erb) into it.
+In the `cli` directory create the `php.ini.erb` file and copy the content from [`conf/php.ini.erb`](https://github.com/frantisekz/openshift-cartridge-php/blob/master/conf/php.ini.erb) into it.
 Now you can customize the cli php configuration.
 
-In the `fpm` directory create the `php.ini.erb` file and copy the content from [`conf/php-fpm.ini.erb`](https://github.com/boekkooi/openshift-cartridge-php/blob/master/conf/php-fpm.ini.erb) into it.
-Also create the `php-fpm.conf.erb` file and copy the content from [`conf/php-fpm.conf.erb`](https://github.com/boekkooi/openshift-cartridge-php/blob/master/conf/php-fpm.conf.erb) into it.
+In the `fpm` directory create the `php.ini.erb` file and copy the content from [`conf/php-fpm.ini.erb`](https://github.com/frantisekz/openshift-cartridge-php/blob/master/conf/php-fpm.ini.erb) into it.
+Also create the `php-fpm.conf.erb` file and copy the content from [`conf/php-fpm.conf.erb`](https://github.com/frantisekz/openshift-cartridge-php/blob/master/conf/php-fpm.conf.erb) into it.
 Now you can customize the php-fpm configuration.
 
 ## Composer/PEAR
@@ -91,7 +89,7 @@ To compile a new version you will first need a openshift application.
 rhc create-app nginx http://cartreflect-claytondev.rhcloud.com/github/boekkooi/openshift-cartridge-nginx
 ```
 
-Now clone the repository and create a `php` folder. Now copy the `usr/compile` directory from [this](https://github.com/boekkooi/openshift-cartridge-php) repository.
+Now clone the repository and create a `php` folder. Now copy the `usr/compile` directory from [this](https://github.com/frantisekz/openshift-cartridge-php) repository.
 Now set the versions you need to compile in the `php/compile/versions` file. Commit and push the application repository.
 
 SSH into your app and go to the compile folder (`cd ${OPENSHIFT_REPO_DIR}/php/compile`) and start compiling by running the following commands:
