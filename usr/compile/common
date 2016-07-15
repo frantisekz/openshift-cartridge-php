@@ -6,7 +6,7 @@ ROOT_DIR="${CURRENT_DIR}/catridge/usr"
 LIBS_DIR="${ROOT_DIR}/shared/libs"
 
 # Include utils
-source "$( dirname $( dirname ${CURRENT_DIR} ) )/lib/util.sh"
+source ~/nginx/usr/compile/build_util
 
 # Ensure root dir exists
 mkdir -p ${ROOT_DIR}
